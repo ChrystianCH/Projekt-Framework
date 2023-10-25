@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css'
-import Navbar from './components/Navbar';
-import Content from './components/Content';
+import { Navbar, Content } from './components/index';
 
 function App() {
+  
   return (
     <div className='container'>
+      <div className='container--card'>
       <Navbar />
-      <Content />
+      <Content {...{}}/>
+      </div>
     </div>
   );
 }
