@@ -1,11 +1,11 @@
 import React from "react";
 
-function Navbar() {
+function Navbar(props: {title: string, icon?: string}) {
     return (
         <nav className="navbar">
-            <i className="fa fa-globe">
+            <i className={props.icon ? props.icon : undefined}>
             </i>
-            <h1>Travel Jurnal</h1>
+            <h1>{props.title}</h1>
         </nav>
     )
 }

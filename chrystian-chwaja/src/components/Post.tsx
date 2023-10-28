@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-function Content(props: any) {
-    const { loading, url } = props;
+function Post() {
+  const [data, setData] = useState<PostsRequest>(null!);
+  const [loading, setLoading] = useState(true);
 
-    return (<div className="border">
+  useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+          .then(res => res.json())
+              .then(data => setData(data))
+                .finally(() => setLoading(false));
+  }, []);
+
+return (<div className="border">
         <section className="content">
-            {loading ? <span>Loading...</span> : <img src={url} className="content--img" alt="123"></img>}
+            {loading ? <span>Loading...</span> :<span>{data.body}</span>}
             <div className="content--text">
                 <div className="content--local">
                     <i className="fa fa-map-marker"></i>
@@ -22,5 +30,6 @@ function Content(props: any) {
             </div>
         </section>
     </div>)
-};
-export default Content;
+}
+
+export default Post;
