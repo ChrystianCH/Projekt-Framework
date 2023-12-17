@@ -1,7 +1,7 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError } from 'react-router-dom';
 
 const ErrorPageStyle: React.CSSProperties = {
-    textAlign: "center",
+    textAlign: 'center',
 };
 
 function ErrorPage() {

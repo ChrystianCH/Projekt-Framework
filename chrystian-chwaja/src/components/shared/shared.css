@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
 
 /* -- scrollbar -- */
 
@@ -14,11 +14,11 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, .2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, .4);
 }
 
 ::-webkit-scrollbar-thumb:active {
@@ -27,30 +27,23 @@
 
 /* --Forms-- */
 
-.action-button {
+.clean-button {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+.action-button {
     transform: scaleX(-1);
     font-size: 15px;
 }
 
-.edit-button:hover {
+.blue-hover:hover {
     color: blue;
 }
 
-.delete-button:hover {
+.red-hover:hover {
     color: rgb(189, 17, 52);
-}
-
-.add-button {
-    margin-top: 5px;
-    border: none;
-    background: none;
-}
-
-.add-button:hover {
-    color: blue;
 }
 
 .forms-container {
@@ -67,17 +60,14 @@
 /* -- Navbar -- */
 
 .topnav {
-    top: 0;
-    width: 100%;
     display: flex;
+    top: 0;
     justify-content: center;
     position: sticky;
-    background-color: rgba(241, 247, 255, 0.186);
 }
 
 .topnav a {
     color: #2c2a2a;
-    text-align: center;
     padding: 14px 20px;
     text-decoration: none;
     font-size: 20px;
@@ -93,7 +83,7 @@
 .blog {
     margin: 0 auto;
     max-width: 800px;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     color: #333333;
 }
 

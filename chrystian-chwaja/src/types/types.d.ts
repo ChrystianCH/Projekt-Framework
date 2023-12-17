@@ -1,22 +1,21 @@
-type AlbumsRequest = {
-    albumId: number,
-    id: number,
-    title: string,
-    url: string,
-    thumbNail?: string,
-}
-
 type PostsRequest = {
-    userId?: number,
     id: number,
     title: string,
     body: string,
+    userId?: number,
 }
 
 type UsersRequest = {
     id: number,
     name: string,
     email: string
+}
+
+type ToDosRequest = {
+    id: number,
+    title: string,
+    completed: boolean
+    userId?: number,
 }
 
 type CustomError = {

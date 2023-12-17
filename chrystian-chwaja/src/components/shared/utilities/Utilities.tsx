@@ -1,5 +1,5 @@
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 interface CustomStyles {
     zeroStateStyle: React.CSSProperties,
@@ -9,7 +9,7 @@ interface CustomStyles {
 const style: CustomStyles = {
     zeroStateStyle: {
         opacity: 0.2,
-        textAlign: "center",
+        textAlign: 'center',
         padding: 20,
     },
     addButtonStyle: {
@@ -17,7 +17,7 @@ const style: CustomStyles = {
         bottom: 60,
         right: 100,
         opacity: 0.7,
-        color: "gray",
+        color: 'gray',
         padding: 10,
         backgroundColor: 'rgb(251, 251, 251)',
         border: '0.1rem solid rgba(0,0,0,.1)',
@@ -32,12 +32,12 @@ function AddButton(props: { navigateTo: string, title: string }) {
 
 function ContentTitle(props: { title: string, subTitle?: string }) {
     return (
-        <header className="blog-header pure-g">
-            <div className="pure-u-1">
-                <h1 className="blog-title">
+        <header className='blog-header pure-g'>
+            <div className='pure-u-1'>
+                <h1 className='blog-title'>
                     {props.title}
                 </h1>
-                <p className="blog-subtitle">
+                <p className='blog-subtitle'>
                     {props.subTitle}
                 </p>
             </div>
@@ -50,9 +50,9 @@ function ZeroState(prop: { title: string }) {
 }
 
 function Loading() {
-    return (<header className="blog-header pure-g">
-        <div className="pure-u-1">
-            <h1 className="blog-title">
+    return (<header className='blog-header pure-g'>
+        <div className='pure-u-1'>
+            <h1 className='blog-title'>
                 Loading...
             </h1>
         </div>
