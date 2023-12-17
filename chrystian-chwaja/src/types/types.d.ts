@@ -3,11 +3,23 @@ type AlbumsRequest = {
     id: number,
     title: string,
     url: string,
-    thumNailUrl?: string,
+    thumbNail?: string,
 }
+
 type PostsRequest = {
-    userId: number,
+    userId?: number,
     id: number,
     title: string,
     body: string,
+}
+
+type UsersRequest = {
+    id: number,
+    name: string,
+    email: string
+}
+
+type CustomError = {
+    statusText: string,
+    message: string,
 }
