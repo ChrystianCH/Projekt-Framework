@@ -1,5 +1,5 @@
 import './components/shared/shared.css'
-import { Posts, Login, Navbar, ErrorPage, AddPost, EditPost, Todos, AddToDo, EditToDo } from './components/index';
+import { Posts, Login, Navbar, ErrorPage, AddPost, EditPost, Todos, AddToDo, EditToDo, Photos, AddPhoto, EditPhoto } from './components/index';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -36,6 +36,21 @@ function App() {
         {
           path: '/toDos/editToDo/:toDoId',
           element: <EditToDo />,
+        }
+      ],
+    },
+    {
+      path: '/photos',
+      element: <><Navbar /><Photos /></>,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/photos/addphoto',
+          element: <AddPhoto />,
+        },
+        {
+          path: '/photos/editphoto/:photoId',
+          element: <EditPhoto />,
         }
       ],
     },

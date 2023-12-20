@@ -2,7 +2,7 @@ type PostsRequest = {
     id: number,
     title: string,
     body: string,
-    userId?: number,
+    userId?: number
 }
 
 type UsersRequest = {
@@ -15,10 +15,18 @@ type ToDosRequest = {
     id: number,
     title: string,
     completed: boolean
-    userId?: number,
+    userId?: number
+}
+
+type PhotosRequest = {
+    albumId?: number,
+    id: number,
+    title: string,
+    url: string,
+    thumbnailUrl?: string
 }
 
 type CustomError = {
     statusText: string,
-    message: string,
+    message: string
 }

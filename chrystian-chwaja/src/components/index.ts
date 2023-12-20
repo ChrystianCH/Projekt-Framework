@@ -1,4 +1,5 @@
-export { AddPost, EditPost, Posts } from './post/index'
+export { AddPhoto, EditPhoto, Photos } from './photos/index';
+export { AddPost, EditPost, Posts } from './posts/index'
 export { AddToDo, EditToDo, Todos } from './todos/index'
 export { default as ErrorPage } from './shared/error/Error'
 export { default as Login } from './login/Login';

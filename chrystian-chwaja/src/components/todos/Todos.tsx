@@ -27,7 +27,7 @@ function Post() {
     return (
         <>
             <Utilities.ContentTitle title='Tasks' subTitle='Harmonize your day and maximize your productivity' />
-            <button className='clean-button blue-hover' onClick={() => setIsCompleted(!isCompleted)}>Show completed</button>
+            <button className='clean-button blue-hover' onClick={() => { setIsCompleted(!isCompleted); navigate('/toDos') }}>Show completed</button>
             {data && data.length ? data.filter((item) => item.completed !== isCompleted).map((item) => {
                 return (item ?
                     <div className='blog-posts pure-g' key={item.id}>

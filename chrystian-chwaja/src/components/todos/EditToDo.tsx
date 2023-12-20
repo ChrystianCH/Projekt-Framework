@@ -12,7 +12,7 @@ function EditPost() {
             .then(res => res.json())
             .then(data => setEditToDo({ id: data.id, title: data.title, completed: data.completed }))
             .finally(() => setIsLoading(false));
-    }, []);
+    }, [window.location.href.slice(-1)]);
 
     if (isloading) return <Utilities.Loading />;
 
@@ -45,7 +45,7 @@ function EditPost() {
             </div>
             <form onSubmit={handleSubmit} className='new-post-form'>
                 <label htmlFor="default-remember">
-                    <input type="checkbox" id="default-remember" name='completed' onChange={handleChange} /> Done
+                    <input type="checkbox" id="default-remember" name='completed' onChange={handleChange} checked={editToDo.completed} /> Done
                 </label>
                 <textarea cols={30} rows={10} name='title' onChange={handleChange} className='add-textarea' value={editToDo.title}></textarea>
                 <button className='clean-button create-button blue-hover' type='submit'>Change</button>
