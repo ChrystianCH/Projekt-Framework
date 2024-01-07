@@ -5,6 +5,14 @@ type PostsRequest = {
     userId?: number
 }
 
+type CommentsRequest = {
+    postId: number,
+    id: number,
+    name: string,
+    email: string,
+    body: string,
+}
+
 type UsersRequest = {
     id: number,
     name: string,
@@ -14,19 +22,25 @@ type UsersRequest = {
 type ToDosRequest = {
     id: number,
     title: string,
-    completed: boolean
-    userId?: number
+    completed: boolean,
+    userId?: number,
 }
 
 type PhotosRequest = {
-    albumId?: number,
+    albumId: number,
     id: number,
     title: string,
     url: string,
-    thumbnailUrl?: string
+    thumbnailUrl?: string,
 }
 
 type CustomError = {
     statusText: string,
-    message: string
+    message: string,
+}
+
+type AlbumsRequest = {
+    userId?: number,
+    id: number,
+    title: string,
 }

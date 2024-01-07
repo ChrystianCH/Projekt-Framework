@@ -6,7 +6,7 @@ function Login() {
     const [emails, setEmails] = useState<UsersRequest[]>([]);
     const [isloading, setIsLoading] = useState<boolean>(true);
     const [logged, setLogged] = useState<boolean>(false);
-    const [login, setLogin] = useState<String>('');
+    const [login, setLogin] = useState<string>('');
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -23,7 +23,7 @@ function Login() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         for (const item of emails) {
-            if (login === item.email) return setLogged(true);
+            if (login === item.email) { window.localStorage.setItem('token', login); return setLogged(true)};
         }
     }
 

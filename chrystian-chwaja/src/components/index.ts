@@ -1,3 +1,5 @@
+export { AddAlbum, Albums, EditAlbum } from './albums/index'
+export { AddComment, EditComment, Comments } from './comments/index';
 export { AddPhoto, EditPhoto, Photos } from './photos/index';
 export { AddPost, EditPost, Posts } from './posts/index'
 export { AddToDo, EditToDo, Todos } from './todos/index'

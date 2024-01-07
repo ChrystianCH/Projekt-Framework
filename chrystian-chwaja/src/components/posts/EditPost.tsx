@@ -12,7 +12,7 @@ function EditPost() {
             .then(res => res.json())
             .then(data => setEditPost({ id: data.id, title: data.title, body: data.body }))
             .finally(() => setIsLoading(false));
-    }, [[window.location.href.slice(-1)]]);
+    }, [window.location.href.slice(-1)]);
 
     if (isloading) return <Utilities.Loading />;
 

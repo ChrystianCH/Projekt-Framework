@@ -1,5 +1,5 @@
 import './components/shared/shared.css'
-import { Posts, Login, Navbar, ErrorPage, AddPost, EditPost, Todos, AddToDo, EditToDo, Photos, AddPhoto, EditPhoto } from './components/index';
+import { Posts, Login, Navbar, ErrorPage, AddPost, EditPost, Todos, AddToDo, EditToDo, Photos, AddPhoto, EditPhoto, Comments, AddComment, EditComment, Albums, AddAlbum, EditAlbum } from './components/index';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -40,17 +40,47 @@ function App() {
       ],
     },
     {
-      path: '/photos',
+      path: '/photos/:albumId',
       element: <><Navbar /><Photos /></>,
       errorElement: <ErrorPage />,
       children: [
         {
-          path: '/photos/addphoto',
+          path: '/photos/:albumId/addphoto',
           element: <AddPhoto />,
         },
         {
-          path: '/photos/editphoto/:photoId',
+          path: '/photos/:albumId/editphoto/:photoId',
           element: <EditPhoto />,
+        }
+      ],
+    },
+    {
+      path: '/comments/:postId',
+      element: <><Navbar /><Comments /></>,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/comments/:postId/addcomment',
+          element: <AddComment />,
+        },
+        {
+          path: '/comments/:postId/editcomment/:commentId',
+          element: <EditComment />,
+        }
+      ],
+    },
+    {
+      path: '/Albums',
+      element: <><Navbar /><Albums /></>,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/Albums/addalbum',
+          element: <AddAlbum />,
+        },
+        {
+          path: '/Albums/editalbum/:albumId',
+          element: <EditAlbum />,
         }
       ],
     },
