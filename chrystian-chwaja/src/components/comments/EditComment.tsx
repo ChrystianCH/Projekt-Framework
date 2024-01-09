@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Utilities } from '../index';
 
 function EditComment() {
-    const [editComment, setEditComment] = useState<CommentsRequest>({ id: 0, name: '', body: '',  postId: 0, email: '' });
+    const [editComment, setEditComment] = useState<CommentsRequest>({ id: 0, name: '', body: '', postId: 0, email: '' });
     const [isloading, setIsLoading] = useState<boolean>(true);
     const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ function EditComment() {
     return (
         <div className='new-post'>
             <div className='new-post-header'>
-                <span>Edit Commment</span>
+                <span>Edit Comment</span>
                 <button className='clean-button action-button red-hover' onClick={() => navigate(`/comments/${editComment.postId}`)}>&#10005;</button>
             </div>
             <form onSubmit={handleSubmit} className='new-post-form'>

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-
 function AddComment() {
     const { postId } = useParams();
-    const [newComment, setNewComment] = useState<CommentsRequest>({ id: 0, body: '', email: '', name: '', postId: Number(postId)});
+    const [newComment, setNewComment] = useState<CommentsRequest>({ id: 0, body: '', email: '', name: '', postId: Number(postId) });
     const navigate = useNavigate();
 
 
@@ -33,11 +32,11 @@ function AddComment() {
     return (
         <div className='new-post'>
             <div className='new-post-header'>
-                <span>New Commment</span>
+                <span>New Comment</span>
                 <button className='action-button red-hover clean-button' onClick={() => navigate(-1)}>&#10005;</button>
             </div>
             <form onSubmit={handleSubmit} className='new-post-form'>
-                <input placeholder='Name' name='name' onChange={handleChange} className='add-input'/>
+                <input placeholder='Name' name='name' onChange={handleChange} className='add-input' />
                 <textarea cols={30} rows={10} placeholder='Description' name='body' onChange={handleChange} className='add-textarea'></textarea>
                 <button className='clean-button create-button blue-hover' type='submit'>Create</button>
             </form>

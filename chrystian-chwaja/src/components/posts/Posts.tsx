@@ -3,7 +3,7 @@ import { Utilities } from '../index';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 function Post() {
-    const [data, setData] = useState<PostsRequest[]>();
+    const [posts, setPosts] = useState<PostsRequest[]>();
     const [comments, setComments] = useState<CommentsRequest[]>()
     const [isloading, setIsLoading] = useState<boolean>(true);
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ function Post() {
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => setPosts(data))
             .catch(reject => console.log(reject));
         fetch('https://jsonplaceholder.typicode.com/comments')
             .then(res => res.json())
@@ -25,14 +25,14 @@ function Post() {
     const handleDelete = (id: number) => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
             method: 'DELETE',
-        }).then(() => setData(data => data!.filter(item => item.id !== id)));
+        }).then(() => setPosts(data => data!.filter(item => item.id !== id)));
         navigate('/posts');
     }
 
     return (
         <>
             <Utilities.ContentTitle title='Posts' subTitle='Thoughts and musings on various topics' />
-            {data && data.length ? data.map((item) => {
+            {posts && posts.length ? posts.map((item) => {
                 return (item ?
                     <div className='blog-posts pure-g' key={item.id}>
                         <div className='pure-u-1 pure-u-md-1-2'>

@@ -10,7 +10,6 @@ function Photos() {
     const [slide, setSlide] = useState<number>(0);
     const navigate = useNavigate();
 
-
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/photos')
             .then(res => res.json())
@@ -25,8 +24,7 @@ function Photos() {
         fetch(`https://jsonplaceholder.typicode.com/photos/${id}`, {
             method: 'DELETE',
         }).then(() => setData(data => data!.filter(item => item.id !== id)));
-        navigate('/photos');
-        setSlide((slideIndex) => (slideIndex > data!.length) ? slideIndex = data!.length : slideIndex + 1)
+        navigate(`/photos/${albumId}`);
     }
 
     return (
@@ -51,7 +49,7 @@ function Photos() {
                                 <button className='clean-button action-button' onClick={() => setSlide((slideIndex) => (slideIndex <= 1) ? slideIndex = 1 : slideIndex - 1)} disabled={!data[slide - 1]}>&#10093;</button>
                                 <div style={{ opacity: onHover ? 1 : 0 }} >
                                     <button className='clean-button action-button blue-hover' onClick={() => navigate(`/photos/${albumId}/editphoto/${item!.id}`)}>&#x270E;</button>
-                                    <button className='clean-button action-button red-hover' onClick={() => handleDelete(item!.id)}>&#x2717;</button>
+                                    <button className='clean-button action-button red-hover' onClick={() => handleDelete(item.id)}>&#x2717;</button>
                                 </div>
                                 <button className='clean-button action-button' onClick={() => setSlide((slideIndex) => (slideIndex > data.length) ? slideIndex = data.length : slideIndex + 1)} disabled={!data[slide + 1]}>&#10092;</button>
                                 {onHover && <div style={{

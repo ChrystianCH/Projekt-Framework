@@ -34,14 +34,14 @@ function EditPost() {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         });
-        navigate('/toDos');
+        navigate('/todos');
     };
 
     return (
         <div className='new-post'>
             <div className='new-post-header'>
                 <span>Edit Task</span>
-                <button className='clean-button action-button red-hover' onClick={() => navigate('/toDos')}>&#10005;</button>
+                <button className='clean-button action-button red-hover' onClick={() => navigate('/todos')}>&#10005;</button>
             </div>
             <form onSubmit={handleSubmit} className='new-post-form'>
                 <label htmlFor="default-remember">

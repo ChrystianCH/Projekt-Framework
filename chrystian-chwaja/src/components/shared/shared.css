@@ -138,11 +138,11 @@
 
 .add-input {
     border: none;
-    border-bottom: 1px solid #3333;
 }
 
 .add-textarea {
     border: none;
+    border-top: 1px solid #3333;
     resize: none;
     margin-top: 5px;
 }

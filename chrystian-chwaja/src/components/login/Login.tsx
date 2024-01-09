@@ -15,7 +15,6 @@ function Login() {
     }, []);
 
     if (isloading) return <Utilities.Loading />;
-    console.log(emails);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setLogin(e.target.value);

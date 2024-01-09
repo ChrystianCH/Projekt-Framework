@@ -25,16 +25,16 @@ function App() {
       ],
     },
     {
-      path: '/toDos',
+      path: '/todos',
       element: <><Navbar /><Todos /></>,
       errorElement: <ErrorPage />,
       children: [
         {
-          path: '/toDos/addtoDo',
+          path: '/todos/addtoDo',
           element: <AddToDo />,
         },
         {
-          path: '/toDos/editToDo/:toDoId',
+          path: '/todos/editToDo/:toDoId',
           element: <EditToDo />,
         }
       ],
@@ -70,16 +70,16 @@ function App() {
       ],
     },
     {
-      path: '/Albums',
+      path: '/albums',
       element: <><Navbar /><Albums /></>,
       errorElement: <ErrorPage />,
       children: [
         {
-          path: '/Albums/addalbum',
+          path: '/albums/addalbum',
           element: <AddAlbum />,
         },
         {
-          path: '/Albums/editalbum/:albumId',
+          path: '/albums/editalbum/:albumId',
           element: <EditAlbum />,
         }
       ],

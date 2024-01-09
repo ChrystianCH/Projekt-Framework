@@ -22,13 +22,13 @@ function Post() {
         fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
             method: 'DELETE',
         }).then(() => setData(data => data!.filter(item => item.id !== id)));
-        navigate('/toDos');
+        navigate('/todos');
     };
 
     return (
         <>
             <Utilities.ContentTitle title='Tasks' subTitle='Harmonize your day and maximize your productivity' />
-            {data && <button className='clean-button blue-hover' onClick={() => { setIsCompleted(!isCompleted); navigate('/toDos') }}>Show completed</button> }
+            {data && <button className='clean-button blue-hover' onClick={() => { setIsCompleted(!isCompleted); navigate('/todos') }}>Show completed</button>}
             {data && data.length ? data.filter((item) => item.completed !== isCompleted).map((item) => {
                 return (item ?
                     <div className='blog-posts pure-g' key={item.id}>
@@ -37,7 +37,7 @@ function Post() {
                                 <div className='blog-post-title'>
                                     <span style={item.completed ? { color: 'green' } : { color: 'red' }}>{item.completed ? 'Completed' : 'Not completed'}</span>
                                     <span>
-                                        <button className='clean-button action-button blue-hover' onClick={() => navigate(`/toDos/editToDo/${item.id}`)}>&#x270E;</button>
+                                        <button className='clean-button action-button blue-hover' onClick={() => navigate(`/todos/editToDo/${item.id}`)}>&#x270E;</button>
                                         <button className='clean-button action-button red-hover' onClick={() => handleDelete(item.id)}>&#x2717;</button>
                                     </span>
                                 </div>
@@ -47,7 +47,7 @@ function Post() {
                     </div>
                     : '');
             }) : <Utilities.ZeroState title='Hurray, You are very organized' />}
-            <Utilities.AddButton navigateTo='/toDos/addtoDo' title='Task' />
+            <Utilities.AddButton navigateTo='/todos/addtoDo' title='Add Task' />
             <Outlet />
         </>
     );

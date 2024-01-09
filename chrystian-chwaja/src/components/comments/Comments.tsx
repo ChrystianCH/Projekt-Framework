@@ -22,7 +22,7 @@ function Comments() {
         fetch(`https://jsonplaceholder.typicode.com/comments/${id}`, {
             method: 'DELETE',
         }).then(() => setData(data => data!.filter(item => item.id !== id)));
-        navigate(`/comments/${window.location.href.slice(-1)}`);
+        navigate(`/comments/${postId}`);
     }
 
     return (
@@ -50,7 +50,7 @@ function Comments() {
                     : '');
             }) : <Utilities.ZeroState title='Hurray, You are not attention seeker' />}
 
-            <Utilities.AddButton navigateTo={`/comments/${window.location.href.slice(-1)}/addcomment`} title='Add comment' />
+            <Utilities.AddButton navigateTo={`/comments/${postId}/addcomment`} title='Add comment' />
             <Outlet />
         </>
     );

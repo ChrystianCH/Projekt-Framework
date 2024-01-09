@@ -22,14 +22,14 @@ function AddToDo() {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         });
-        navigate('/toDos');
+        navigate('/todos');
     };
 
     return (
         <div className='new-post'>
             <div className='new-post-header'>
                 <span>New Task</span>
-                <button className='action-button red-hover clean-button' onClick={() => navigate('/toDos')}>&#10005;</button>
+                <button className='action-button red-hover clean-button' onClick={() => navigate('/todos')}>&#10005;</button>
             </div>
             <form onSubmit={handleSubmit} className='new-post-form'>
                 <textarea cols={30} rows={10} placeholder='Description' name='title' onChange={handleChange} className='add-textarea' value={newToDo.title}></textarea>

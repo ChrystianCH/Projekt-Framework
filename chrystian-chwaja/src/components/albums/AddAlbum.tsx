@@ -31,7 +31,7 @@ function AddAlbum() {
                 <button className='action-button red-hover clean-button' onClick={() => navigate(-1)}>&#10005;</button>
             </div>
             <form onSubmit={handleSubmit} className='new-post-form'>
-                <input placeholder='Album' className='add-input' disabled/>
+                <input placeholder='Album' className='add-input' disabled />
                 <textarea cols={30} rows={10} placeholder='Title' name='title' onChange={handleChange} className='add-textarea'></textarea>
                 <button className='clean-button create-button blue-hover' type='submit'>Create</button>
             </form>

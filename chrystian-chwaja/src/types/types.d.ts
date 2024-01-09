@@ -2,7 +2,7 @@ type PostsRequest = {
     id: number,
     title: string,
     body: string,
-    userId?: number
+    userId?: number,
 }
 
 type CommentsRequest = {
@@ -16,7 +16,7 @@ type CommentsRequest = {
 type UsersRequest = {
     id: number,
     name: string,
-    email: string
+    email: string,
 }
 
 type ToDosRequest = {
