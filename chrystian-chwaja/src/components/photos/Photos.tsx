@@ -46,12 +46,12 @@ function Photos() {
                                 flexWrap: 'wrap',
                                 filter: `brightness(${onHover ? .5 : 1})`,
                             }} onMouseEnter={() => setOnHover(true)} onMouseLeave={() => setOnHover(false)}>
-                                <button className='clean-button action-button' onClick={() => setSlide((slideIndex) => (slideIndex <= 1) ? slideIndex = 1 : slideIndex - 1)} disabled={!data[slide - 1]}>&#10093;</button>
+                                <button className='clean-button action-button' onClick={() => setSlide((slideIndex) => (slideIndex <= 1) ? slideIndex = 1 : slideIndex - 1)}>&#10093;</button>
                                 <div style={{ opacity: onHover ? 1 : 0 }} >
                                     <button className='clean-button action-button blue-hover' onClick={() => navigate(`/photos/${albumId}/editphoto/${item!.id}`)}>&#x270E;</button>
                                     <button className='clean-button action-button red-hover' onClick={() => handleDelete(item.id)}>&#x2717;</button>
                                 </div>
-                                <button className='clean-button action-button' onClick={() => setSlide((slideIndex) => (slideIndex > data.length) ? slideIndex = data.length : slideIndex + 1)} disabled={!data[slide + 1]}>&#10092;</button>
+                                <button className='clean-button action-button' onClick={() => setSlide((slideIndex) => (slideIndex > data.length) ? slideIndex = data.length : slideIndex + 1)} >&#10092;</button>
                                 {onHover && <div style={{
                                     position: 'absolute',
                                     bottom: 20, color: 'white'

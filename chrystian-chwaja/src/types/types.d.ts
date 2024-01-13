@@ -2,7 +2,7 @@ type PostsRequest = {
     id: number,
     title: string,
     body: string,
-    userId?: number,
+    userId?: number
 }
 
 type CommentsRequest = {
@@ -10,20 +10,20 @@ type CommentsRequest = {
     id: number,
     name: string,
     email: string,
-    body: string,
+    body: string
 }
 
 type UsersRequest = {
     id: number,
     name: string,
-    email: string,
+    email: string
 }
 
 type ToDosRequest = {
     id: number,
     title: string,
     completed: boolean,
-    userId?: number,
+    userId?: number
 }
 
 type PhotosRequest = {
@@ -31,16 +31,16 @@ type PhotosRequest = {
     id: number,
     title: string,
     url: string,
-    thumbnailUrl?: string,
+    thumbnailUrl?: string
 }
 
 type CustomError = {
     statusText: string,
-    message: string,
+    message: string
 }
 
 type AlbumsRequest = {
     userId?: number,
     id: number,
-    title: string,
+    title: string
 }
